@@ -59,14 +59,18 @@ List* get_adj_nodes(Node* n){
       //FILAS
       for(int i=0;i<9;i++){
         if(i!=columna && n->sudo[fila][i] !=valor){  
-          pushBack(list,&(n->sudo[9][i]));
+          int* valorPtr=malloc(sizeof(int));
+          *valorPtr=n->sudo[i][columna];
+          pushBack(list,valorPtr);
         } 
       }
 
       //COLUMNAS
       for(int i=0;i<9;i++){
         if(i!=fila && n->sudo[i][columna] !=valor){
-          pushBack(list,&(n->sudo[i][columna]));
+          int* valorPtr=malloc(sizeof(int));
+          *valorPtr=n->sudo[i][columna];
+          pushBack(list,valorPtr);
         }  
       }
 
@@ -77,7 +81,9 @@ List* get_adj_nodes(Node* n){
       for(int i=filaInicioSub; i<filaInicioSub+3 ; i++ ){
         for(int j=colInicioSub; j<colInicioSub+3 ; j++){
           if(i!=fila && j!=columna && n->sudo[i][j] !=valor){
-            pushBack(list, n->sudo[i][j]);
+            int* valorPtr=malloc(sizeof(int));
+            *valorPtr=n->sudo[i][j];
+            pushBack(list,valorPtr);
           }
         }  
       }
