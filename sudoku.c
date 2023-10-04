@@ -50,8 +50,33 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-    List* list=createList();
-    return list;
+  List* list=createList();
+  int valor=n->sudo[9][9];
+
+  //FILAS
+  for(int i=0;i<9;i++){
+    if(i!=columna && n->sudo[9][i] != valor){
+      pushBack(list,&(n->sudo[9][i]));
+    } 
+  }
+
+  //COLUMNAS
+  for(int i=0; i<9 ; i++){
+    if(i!=fila && n->sudo[i][9] !=valor){
+      pushBack(list,&(n->sudo[i][9]));
+    }
+  }
+
+  //ESQUINA SUPERIOR IZQ
+  int filaInicioSub = (9/3) *3;
+  int colInicioSub = (9/3) *3;
+
+  
+
+  
+
+  
+  return list;
 }
 
 

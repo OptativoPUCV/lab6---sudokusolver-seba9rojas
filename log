@@ -2,3 +2,24 @@ Wed 04 Oct 2023 10:25:43 PM UTC:
  tests:  0|5
 total_score: 0/70
 350430d
+Wed 04 Oct 2023 10:53:54 PM UTC: 
+ sudoku.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:58:11: error: ‘columna’ undeclared (first use in this function)
+   58 |     if(i!=columna && n->sudo[9][i] != valor){
+      |           ^~~~~~~
+sudoku.c:58:11: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:65:11: error: ‘fila’ undeclared (first use in this function)
+   65 |     if(i!=fila && n->sudo[i][9] !=valor){
+      |           ^~~~
+sudoku.c:72:7: error: unused variable ‘colInicioSub’ [-Werror=unused-variable]
+   72 |   int colInicioSub = (9/3) *3;
+      |       ^~~~~~~~~~~~
+sudoku.c:71:7: error: unused variable ‘filaInicioSub’ [-Werror=unused-variable]
+   71 |   int filaInicioSub = (9/3) *3;
+      |       ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2a79fd9
