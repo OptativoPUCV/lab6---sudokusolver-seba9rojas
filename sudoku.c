@@ -71,7 +71,15 @@ List* get_adj_nodes(Node* n){
   int filaInicioSub = (9/3) *3;
   int colInicioSub = (9/3) *3;
 
-  
+  //SUBCUADRÍCULA
+  for(int i=filaInicioSub; i<filaInicioSub+3 ; i++ ){
+    for(int j=colInicioSub; j<colInicioSub+3 ; j++){
+      if(i!=9 && j!=9 && n->sudo[i][j] !=valor){
+        pushBack(list, n->sudo[i][j]);
+      }
+      
+    }
+  }
 
   
 

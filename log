@@ -23,3 +23,27 @@ sudoku.c:71:7: error: unused variable ‘filaInicioSub’ [-Werror=unused-variab
 cc1: all warnings being treated as errors
 Compilation failed
 2a79fd9
+Wed 04 Oct 2023 10:56:39 PM UTC: 
+ sudoku.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:58:11: error: ‘columna’ undeclared (first use in this function)
+   58 |     if(i!=columna && n->sudo[9][i] != valor){
+      |           ^~~~~~~
+sudoku.c:58:11: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:65:11: error: ‘fila’ undeclared (first use in this function)
+   65 |     if(i!=fila && n->sudo[i][9] !=valor){
+      |           ^~~~
+sudoku.c:78:34: error: passing argument 2 of ‘pushBack’ makes pointer from integer without a cast [-Werror=int-conversion]
+   78 |         pushBack(list, n->sudo[i][j]);
+      |                        ~~~~~~~~~~^~~
+      |                                  |
+      |                                  int
+In file included from test.c:4:
+list.h:23:33: note: expected ‘void *’ but argument is of type ‘int’
+   23 | void pushBack(List* list, void* data);
+      |                           ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e2eed2b
