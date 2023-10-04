@@ -93,3 +93,40 @@ sudoku.c:88:1: error: control reaches end of non-void function [-Werror=return-t
 cc1: all warnings being treated as errors
 Compilation failed
 4e471a6
+Wed 04 Oct 2023 11:18:20 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:81:38: error: passing argument 2 of ‘pushBack’ makes pointer from integer without a cast [-Werror=int-conversion]
+   81 |             pushBack(list, n->sudo[i][j]);
+      |                            ~~~~~~~~~~^~~
+      |                                      |
+      |                                      int
+In file included from test.c:4:
+list.h:23:33: note: expected ‘void *’ but argument is of type ‘int’
+   23 | void pushBack(List* list, void* data);
+      |                           ~~~~~~^~~~
+In file included from test.c:5:
+sudoku.c:54:7: error: unused variable ‘valor’ [-Werror=unused-variable]
+   54 |   int valor=n->sudo[9][9];
+      |       ^~~~~
+sudoku.c: At top level:
+sudoku.c:92:3: error: expected identifier or ‘(’ before ‘for’
+   92 |   for(int i=filaInicioSub; i<filaInicioSub+3 ; i++ ){
+      |   ^~~
+sudoku.c:92:29: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
+   92 |   for(int i=filaInicioSub; i<filaInicioSub+3 ; i++ ){
+      |                             ^
+sudoku.c:92:49: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+   92 |   for(int i=filaInicioSub; i<filaInicioSub+3 ; i++ ){
+      |                                                 ^~
+sudoku.c:102:3: error: expected identifier or ‘(’ before ‘return’
+  102 |   return list;
+      |   ^~~~~~
+sudoku.c:103:1: error: expected identifier or ‘(’ before ‘}’ token
+  103 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+c6b61a0
