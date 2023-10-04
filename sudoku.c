@@ -51,42 +51,15 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
   List* list=createList();
+  if(n==NULL){
+    return list;
+  }
 
-  for(int fila=0;fila<9;fila++){
-    for(int columna=0;columna<9;columna++){
-      int valor=n->sudo[fila][columna];
-
-      //FILAS
-      for(int i=0;i<9;i++){
-        if(i!=columna && n->sudo[fila][i] !=valor){  
-          int* valorPtr=(int*)malloc(sizeof(int));
-          *valorPtr=n->sudo[i][columna];
-          pushBack(list,valorPtr);
-        } 
-      }
-
-      //COLUMNAS
-      for(int i=0;i<9;i++){
-        if(i!=fila && n->sudo[i][columna] !=valor){
-          int* valorPtr=(int*)malloc(sizeof(int));
-          *valorPtr=n->sudo[i][columna];
-          pushBack(list,valorPtr);
-        }  
-      }
-
-      //ESQUINA SUPERIOR IZQ
-      int filaInicioSub = (fila/3) *3;
-      int colInicioSub = (columna/3) *3;
-
-      for(int i=filaInicioSub; i<filaInicioSub+3 ; i++ ){
-        for(int j=colInicioSub; j<colInicioSub+3 ; j++){
-          if(i!=fila && j!=columna && n->sudo[i][j] !=valor){
-            int* valorPtr=(int*)malloc(sizeof(int));
-            *valorPtr=n->sudo[i][j];
-            pushBack(list,valorPtr);
-          }
-        }  
-      }
+  for(int num=1; num<=9;num++){
+    if(n->sudo[0][2]==0){
+      Node* newNode=copy(n);
+      newNode->sudo[0][2]=num;
+      pushBack(list,newNode);
     }
   }
   return list;
