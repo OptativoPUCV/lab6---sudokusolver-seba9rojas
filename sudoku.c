@@ -53,23 +53,40 @@ List* get_adj_nodes(Node* n){
   List* list=createList();
   int valor=n->sudo[9][9];
 
-  //FILAS
-  for(int i=0;i<9;i++){
-    if(i!=columna && n->sudo[9][i] != valor){
-      pushBack(list,&(n->sudo[9][i]));
-    } 
-  }
+  for(int fila=0;fila<9;fila++){
+    for(int columna=0;columna<9;columna++){
+      int valor=n->sudo[fila][columna];
 
-  //COLUMNAS
-  for(int i=0; i<9 ; i++){
-    if(i!=fila && n->sudo[i][9] !=valor){
-      pushBack(list,&(n->sudo[i][9]));
+      //FILAS
+      for(int i=0;i<9;i++){
+        if(i!=columna && n->sudo[fila][i] !=valor){  
+          pushBack(list,&(n->sudo[9][i]));
+        } 
+      }
+
+      //COLUMNAS
+      for(int i=0;i<9;i++){
+        if(i!=fila && n->sudo[i][columna] !=valor){
+          pushBack(list,&(n->sudo[i][columna]));
+        }  
+      }
+
+      //ESQUINA SUPERIOR IZQ
+      int filaInicioSub = (fila/3) *3;
+      int colInicioSub = (columna/3) *3;
+
+      for(int i=filaInicioSub; i<filaInicioSub+3 ; i++ ){
+        for(int j=colInicioSub; j<colInicioSub+3 ; j++){
+          if(i!=fila && j!=columna && n->sudo[i][j] !=valor){
+            pushBack(list, n->sudo[i][j]);
+          }
+        }  
+      }
     }
   }
+  return lista;
+}
 
-  //ESQUINA SUPERIOR IZQ
-  int filaInicioSub = (9/3) *3;
-  int colInicioSub = (9/3) *3;
 
   //SUBCUADRÍCULA
   for(int i=filaInicioSub; i<filaInicioSub+3 ; i++ ){
@@ -81,9 +98,7 @@ List* get_adj_nodes(Node* n){
     }
   }
 
-  
 
-  
   return list;
 }
 
