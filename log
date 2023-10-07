@@ -290,3 +290,20 @@ Sat 07 Oct 2023 02:05:26 AM UTC:
  tests:  1|4
 total_score: 10/70
 b2b49b8
+Sat 07 Oct 2023 02:09:24 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:103:16: error: expected expression before ‘List’
+  103 |         return List;
+      |                ^~~~
+sudoku.c:107:10: error: expected expression before ‘List’
+  107 |   return List;
+      |          ^~~~
+sudoku.c:108:1: error: control reaches end of non-void function [-Werror=return-type]
+  108 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+e0c2770
