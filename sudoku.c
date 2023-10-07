@@ -70,6 +70,20 @@ int is_valid(Node* n){
     }
   }
 
+  //Ahora para subcuadrícula
+  for(int i=0;i<9;i++){
+    int valores[10]={0};
+    for(int j=0;j<9;j++){
+      int subFila= 3*(i/3) + (j/3);
+      int subCol= 3*(i%3) + (j%3);
+      if(valores[n->sudo[subFila][subCol]]!=0){
+        return 0;
+      }
+      if(valores[n->sudo[subFila][subCol]]==0 && n->sudo[subFila][subCol]!=0){
+        valores[n->sudo[subFila][subCol]]==1;
+      }
+    }
+  }
 
 
   

@@ -250,3 +250,14 @@ Sat 07 Oct 2023 01:49:11 AM UTC:
  tests:  3|3
 total_score: 25/70
 e3e0ab2
+Sat 07 Oct 2023 01:55:05 AM UTC: 
+ sudoku.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:83:42: error: statement with no effect [-Werror=unused-value]
+   83 |         valores[n->sudo[subFila][subCol]]==1;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+cc1: all warnings being treated as errors
+Compilation failed
+1101d3d
