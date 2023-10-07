@@ -44,6 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+  //Columnas
   for(int i=0;i<9;i++){
     for(int j=0;j<9;j++){
       if(n->sudo[i][j]){
@@ -55,6 +56,23 @@ int is_valid(Node* n){
       }
     }
   }
+
+  //Se repite el proceso pero ahora para Filas
+  for(int j=0;j<9;j++){
+    for(int i=0;i<9;i++){
+      if(n->sudo[j][i]){
+        for(int k=i+1;k<9;k++){
+          if(n->sudo[k][j]==n->sudo[i][j]){
+            return 0;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  
   return 1;
 }
 
@@ -74,8 +92,6 @@ List* get_adj_nodes(Node* n){
   }
   return list;
 }
-
-
 
 int is_final(Node* n){
   for(int i=0;i<9;i++){
