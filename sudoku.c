@@ -60,7 +60,7 @@ int is_valid(Node* n){
   //Se repite el proceso pero ahora para Filas
   for(int j=0;j<9;j++){
     for(int i=0;i<9;i++){
-      if(n->sudo[j][i]){
+      if(n->sudo[i][j]){
         for(int k=i+1;k<9;k++){
           if(n->sudo[k][j]==n->sudo[i][j]){
             return 0;
