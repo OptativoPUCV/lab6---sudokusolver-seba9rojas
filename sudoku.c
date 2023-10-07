@@ -80,7 +80,7 @@ int is_valid(Node* n){
         return 0;
       }
       if(valores[n->sudo[subFila][subCol]]==0 && n->sudo[subFila][subCol]!=0){
-        valores[n->sudo[subFila][subCol]]==1;
+        valores[n->sudo[subFila][subCol]]=1;
       }
     }
   }
