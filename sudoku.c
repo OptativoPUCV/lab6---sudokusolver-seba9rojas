@@ -100,11 +100,11 @@ List* get_adj_nodes(Node* n){
             pushBack(lista,aux);
           }
         }
-        return List;
+        return lista;
       }
     }
   }
-  return List;
+  return lista;
 }
 
 int is_final(Node* n){
