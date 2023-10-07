@@ -137,7 +137,7 @@ Node* DFS(Node* initial, int* cont){
       push(pila,currentNode);
       currentNode=next(lista);
     }
-    (*cont++);
+    cont++;
   }
 
 
