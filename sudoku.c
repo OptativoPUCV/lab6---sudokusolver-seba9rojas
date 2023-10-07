@@ -130,14 +130,14 @@ Node* DFS(Node* initial, int* cont){
     if(is_final(primerNodo)){
       return primerNodo;
     }
-    List* lista=get_adj_nodes(primerNodo);
+    List* lista=getadjnodes(primerNodo);
     Node* currentNode=first(lista);
 
     while(currentNode!=NULL){
       push(pila,currentNode);
       currentNode=next(lista);
     }
-    (*cont++)
+    (*cont++);
   }
 
 

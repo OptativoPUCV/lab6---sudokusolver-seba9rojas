@@ -342,3 +342,19 @@ sudoku.c:140:14: error: expected ‘;’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 e0ecce1
+Sat 07 Oct 2023 02:39:02 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:133:17: error: implicit declaration of function ‘getadjnodes’; did you mean ‘get_adj_nodes’? [-Werror=implicit-function-declaration]
+  133 |     List* lista=getadjnodes(primerNodo);
+      |                 ^~~~~~~~~~~
+      |                 get_adj_nodes
+sudoku.c:133:17: error: initialization of ‘List *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:140:6: error: value computed is not used [-Werror=unused-value]
+  140 |     (*cont++);
+      |     ~^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+34f5566
