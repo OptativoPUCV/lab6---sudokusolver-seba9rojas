@@ -130,7 +130,7 @@ Node* DFS(Node* initial, int* cont){
     if(is_final(primerNodo)){
       return primerNodo;
     }
-    List* lista=getadjnodes(primerNodo);
+    List* lista=get_adj_nodes(primerNodo);
     Node* currentNode=first(lista);
 
     while(currentNode!=NULL){
